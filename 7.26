@@ -1,0 +1,205 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include<string.h>
+#include<windows.h>
+#include<stdlib.h>
+int main()
+{
+	int i = 0;
+	int j = 1;
+	char password[20] = { 0 };
+	for (i = 0,j=1; i < 3; i++)
+	{
+		printf("请输入密码:");
+		scanf("%s", password);
+		//if (password == "123456")  "=="不能用来比较2个字符串是否相等，应使用库函数 strcmp。
+		if(strcmp(password,"123456")==0)
+		{
+			printf("登陆成功\n");
+			break;
+		}
+		else
+		{
+			printf("密码错误\n");
+			j++;
+		}
+	}
+	if (i == 3)
+	{
+		printf("登陆失败");
+	}
+
+	//char arr1[] = "Welcome to FAFU!!!!!!";
+	//char arr2[] = "#####################";
+	//int left = 0;
+	////int right=sizeof(arr1)/sizeof(arr1[1])-2 与下方等价，但稍low，字符串后面会自动带上/0，所以要减2
+	//int right = strlen(arr1) - 1;//直接计算字符串长度
+	//while (left < right+1)
+	//{
+	//	arr2[left] = arr1[left];
+	//	arr2[right] = arr1[right];
+	//	printf("%s\n", arr2);
+	//	Sleep(100);//休息300毫秒后再循环，S大写，头文件windows.h
+	//	system("cls"); //  执行系统命令的一个函数-cls-清空屏幕，头文件stdlib.h
+	//	left++;
+	//	right--;
+	//}
+	//printf("%s\n", arr2);// 最后再打印一次，否则上方清屏直接全部消失
+//int main()
+//{//二分查找算|折半查找算法
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int k = 0;
+//	scanf("%d", &k);
+//	int sz = sizeof(arr) / sizeof(arr[0]);//计算元素个数
+//	int left = 0;//左下标
+//	int right = sz-1 ;//右下标
+//
+//	while (left < right + 1)//说明中间有元素可被查找
+//	{
+//		int mid = (left + right) / 2;
+//		if (arr[mid] > k)
+//		{
+//			right = mid - 1; //将mid值赋给右下标，范围减小
+//		}
+//		else if (arr[mid] < k)
+//		{
+//			left = mid + 1;//同理，将mid值赋给左下标，范围减小
+//		}
+//		else
+//		{
+//			printf("Find it,its:%d\n", mid);
+//			break;
+//		}
+//	}
+//	if (left > right)//需要再次判断，否则将直接输出No
+//	{
+//		printf("No find.");
+//	}
+
+	//int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+	//int k = 0;
+	//int i = 0;
+	//scanf("%d", &k);
+	//int sz = sizeof(arr) / sizeof(arr[0]);
+	//for (i = 0; i < sz; i++)
+	//{
+	//	if (k == arr[i])
+	//	{
+	//		printf("Find it,the subscript of it is:%d", i);
+	//		break;
+	//	}
+	//}
+	//if (i == sz)
+	//{
+	//	printf("It's no here.");
+	//}
+	//int i = 0;
+	//int n = 0;
+	//int ret = 1;
+	//int j = 0;
+	//int m = 0;
+	//scanf("%d", &m);
+	//for (n = 1; n < m+1; ++n)
+	//{
+		/*ret = 1;
+		for (i = 1; i < n+1; i++)
+		{
+			ret = ret * i;
+		}*/  //与下方代码等价
+	//	ret = ret * n;
+	//	j += ret;
+	//}
+	//	printf("%d", j);
+
+	/*int i = 1;
+	do
+	{
+		if (i == 5)
+			continue;
+		printf("%d ", i);
+		i++;
+	}
+	while (i < 11);*/
+	//int 
+	//	a = 17.5 * 32;
+	//printf("%d", a);
+	/*int i = 0;
+	int j = 0;        此处j赋值为0，判断为假，不进入下方循环，直接0次
+	for (i = 0, j = 0; j = 0; i++, j++)
+		j++;
+	printf("%d %d", i, j);*/
+
+	//int i = 0;
+	//int j = 0;
+	//for (; i < 5; i++)
+	//{
+	//	//j = 0;
+	//	for (; j < 5; j++)//此处省略j=0，导致循环完j未重置，仍然为10，下方代码不再进入
+	//	{
+	//		printf("1");
+	//	}
+	//}
+	//for (;;)//for循环的初始化、调整、判断都可省略，但如果判断省略，则判断条件恒为真，进入死循环
+	//{
+	//	printf("1\n");
+	//}
+	//int i = 0;
+	//int arr[5] = { 3,5,4,8,1 };
+	//for (i = 0; i < 5; i++)//取值采用 前闭后开 式写法
+	//{
+	//	printf("%d ", arr[i]);
+	//}
+	//printf("%d", arr[4]);
+	/*int	i = 0;
+	for (i = 0; i < 10; i++)
+	{
+		if (i == 5) 不可在循环体内修改变量，否则失去控制，如：i=5，判断
+			printf("0");
+		printf("1");
+	}*/
+	//int i = 0;
+	//while (i <= 10)
+	//{
+	//	i++;
+	//	if (i == 5)
+	//		continue;
+	//	printf("%d ", i);
+	//	//i++;
+	//}
+	//int i = 0;
+	//  // 初始化  判断      调整
+	//for (i = 1; i <= 10; i++)
+	//{
+	//	if (i == 5)
+	//		/*continue;*/
+	//		break;
+	//	printf("%d ", i);
+	//}
+	/*int ch = 0;
+	while ((ch = getchar()) != EOF)
+	{
+		if (ch < '0' || ch > '9')
+			continue;
+		putchar(ch\n);
+	}*/
+	//int ret = 0;
+	//int ch = 0;
+	//char passward[20] = { 0 };
+	//printf("请输入密码:>");
+	//scanf("%s", passward);
+	//while ((ch = getchar()) != '\n')
+	//{
+	//	;
+	//}
+	//printf("请确认:>");
+	//ret = getchar();
+	//if (ret == 'Y')
+	//{
+	//	printf("确认成功\n");
+	//}
+	//else
+	//{
+	//	printf("确认失败\n");
+	//}
+	return 0;
+}
